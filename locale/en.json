@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Provider balances and plans",
+    "description": "Adds a `Provider balances and plans` entry to the left sidebar. The page lists the model providers this profile has configured, showing the DeepSeek account or API-key balance and the MiniMax token-plan 5-hour and weekly remaining percentage with reset times. Providers without a public quota API are labeled as such instead of estimated. Keys stay on this machine; the page only shows the balances and percentages the providers returned."
+  }
+}
