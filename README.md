@@ -2,6 +2,21 @@
 
 在 DSH 左侧栏增加一个「提供商余额与套餐」入口，点开后面板按提供商列出**账户余额**和 **Token 套餐剩余**。
 
+## 从 GitHub 安装
+
+仓库：<https://github.com/daishengli/dsh-provider-usage>
+
+在 DSH 里用 `plugin_manager` 的 `install_bundle`，target 填下面这串（`<commit>` 换成 `git rev-parse HEAD` 得到的 40 位哈希）：
+
+```text
+github:daishengli/dsh-provider-usage#<commit>
+```
+
+- **必须 pin 完整 40 位 commit**。用 `main` 分支或 tag 也能装上，但之后 DSH 检测不到更新。
+- 命令行等价写法：`dsh plugin --profile desktop add "github:daishengli/dsh-provider-usage#<commit>"`。
+- 升级就是换成新 commit 重新安装；改完代码要重启一次 DSH。
+- 本机开发时仍建议用本地目录链接安装（`link:`），改动直接生效。
+
 ## 入口
 
 - 左侧栏面板列表里的**提供商余额与套餐**（图标：钱包）。行内名字跟随界面语言，中英文都有。

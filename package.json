@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-provider-usage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "Left-sidebar page listing each configured model provider with its account balance and token-plan windows.",
