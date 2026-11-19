@@ -17,6 +17,29 @@ github:daishengli/dsh-provider-usage#<commit>
 - 升级就是换成新 commit 重新安装；改完代码要重启一次 DSH。
 - 本机开发时仍建议用本地目录链接安装（`link:`），改动直接生效。
 
+### 通过插件索引（Discover）
+
+索引地址：
+
+```text
+https://raw.githubusercontent.com/daishengli/dsh-provider-usage/main/market/index.json
+```
+
+在 DSH 里：**Plugins → 实验性插件** 打开「Custom plugin indexes」→ 切到 **Discover** → **Add index source** → 粘贴上面的 URL → 卡片上点 **Install**（确认框会显示 git 仓库与完整 commit）。
+
+索引由 `npm run market` 生成：它读取 `package.json`、`locale/*.json` 和当前版本的 git tag，把 `source.commit` 固定到该 tag 的提交，并做一遍格式自检。发版顺序：
+
+```sh
+# 改版本号 → 提交 → 打 tag → 生成索引 → 再提交
+git commit -am "版本 1.0.2"
+git tag -a v1.0.2 -m "v1.0.2"
+npm run market
+git commit -am "更新索引到 1.0.2"
+git push origin main --tags
+```
+
+索引和图标与 `market/index.json` 同目录托管，`raw.githubusercontent.com` 直接返回 2xx，不需要 GitHub Pages；若哪天该域名不可达，把 `market/` 目录原样发布到 Pages 即可，索引里的相对图标路径仍然成立。
+
 ## 入口
 
 - 左侧栏面板列表里的**提供商余额与套餐**（图标：钱包）。行内名字跟随界面语言，中英文都有。
