@@ -31,7 +31,8 @@
     "README.md"
   ],
   "scripts": {
-    "test": "node test/providers.test.mjs && node test/account.test.mjs && node test/merge.test.mjs && node test/client.test.mjs"
+    "test": "node test/providers.test.mjs && node test/account.test.mjs && node test/merge.test.mjs && node test/client.test.mjs",
+    "market": "node market/build.mjs"
   },
   "dsh": {
     "bundle": {
